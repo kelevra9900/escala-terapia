@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React,{FC} from 'react'
 import Label from '@/components/Label'
 import Avatar from '@/shared/Avatar'
 import ButtonPrimary from '@/shared/ButtonPrimary'
@@ -6,9 +6,9 @@ import Input from '@/shared/Input'
 import Select from '@/shared/Select'
 import Textarea from '@/shared/Textarea'
 import T from '@/utils/getT'
-import { ImageAdd02Icon } from '@/components/Icons'
+import {ImageAdd02Icon} from '@/components/Icons'
 
-export interface AccountPageProps {}
+export interface AccountPageProps { }
 
 const AccountPage = () => {
 	return (
@@ -37,7 +37,7 @@ const AccountPage = () => {
 				<div className="mt-10 max-w-3xl flex-grow space-y-6 md:mt-0 md:ps-16">
 					<div>
 						<Label>{T['accountPage']['Name']}</Label>
-						<Input className="mt-1.5" defaultValue="Eden Tuan" />
+						<Input className="mt-1.5" defaultValue="Roger Torres" />
 					</div>
 					{/* ---- */}
 					<div>
@@ -51,7 +51,7 @@ const AccountPage = () => {
 					{/* ---- */}
 					<div>
 						<Label>{T['accountPage']['Username']}</Label>
-						<Input className="mt-1.5" defaultValue="@eden_tuan" />
+						<Input className="mt-1.5" defaultValue="@rt" />
 					</div>
 					{/* ---- */}
 					<div>
@@ -60,27 +60,27 @@ const AccountPage = () => {
 					</div>
 					{/* ---- */}
 					<div className="max-w-lg">
-						<Label>{T['accountPage']['Date of birth']}</Label>
-						<Input className="mt-1.5" type="date" defaultValue="1990-07-22" />
+						<Label>Fecha de nacimiento</Label>
+						<Input className="mt-1.5" type="date" defaultValue="1993-07-22" />
 					</div>
 					{/* ---- */}
 					<div>
-						<Label>{T['accountPage']['Addess']}</Label>
+						<Label>Dirección</Label>
 						<Input className="mt-1.5" defaultValue="New york, USA" />
 					</div>
 					{/* ---- */}
 					<div>
-						<Label>{T['accountPage']['Phone number']}</Label>
+						<Label>Número de teléfono</Label>
 						<Input className="mt-1.5" defaultValue="003 888 232" />
 					</div>
 					{/* ---- */}
 					<div>
-						<Label>{T['accountPage']['About you']}</Label>
+						<Label>Acerca de mi</Label>
 						<Textarea className="mt-1.5" defaultValue="..." />
 					</div>
 					<div className="pt-2">
 						<ButtonPrimary>
-							{T['accountPage']['Update information']}
+							Actualizar información
 						</ButtonPrimary>
 					</div>
 				</div>

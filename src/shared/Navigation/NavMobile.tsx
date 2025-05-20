@@ -8,14 +8,12 @@ import {
 	DisclosureButton,
 	DisclosurePanel,
 } from '@headlessui/react'
-import { NavItemType } from './NavigationItem'
-import { NAVIGATION_DEMO } from '@/data/navigation'
-import ButtonPrimary from '@/shared/ButtonPrimary'
+import {NavItemType} from './NavigationItem'
+import {NAVIGATION_DEMO} from '@/data/navigation'
 import SocialsList from '@/shared/SocialsList'
-import { ChevronDownIcon } from '@heroicons/react/24/solid'
+import {ChevronDownIcon} from '@heroicons/react/24/solid'
 import SwitchDarkMode from '@/shared/SwitchDarkMode'
 import Link from 'next/link'
-import LangDropdown from '@/app/(client-components)/(Header)/LangDropdown'
 import T from '@/utils/getT'
 
 export interface NavMobileProps {
@@ -30,7 +28,7 @@ const NavMobile: React.FC<NavMobileProps> = ({
 	const _renderMenuChild = (item: NavItemType) => {
 		return (
 			<ul className="nav-mobile-sub-menu pb-1 ps-6 text-base">
-				{item.children?.map((i, index) => (
+				{item.children?.map((i,index) => (
 					<Disclosure key={i.href + index} as="li">
 						<Link
 							href={{
@@ -69,10 +67,10 @@ const NavMobile: React.FC<NavMobileProps> = ({
 		)
 	}
 
-	const _renderItem = (item: NavItemType, index: number) => {
+	const _renderItem = (item: NavItemType,index: number) => {
 		return (
 			<Disclosure
-				key={item.id}
+				key={item.id + index}
 				as="li"
 				className="text-neutral-900 dark:text-white"
 			>
@@ -129,21 +127,6 @@ const NavMobile: React.FC<NavMobileProps> = ({
 			<ul className="flex flex-col space-y-1 px-2 py-6">
 				{data.map(_renderItem)}
 			</ul>
-			<div className="flex items-center justify-between px-5 py-6">
-				<a
-					className="inline-block"
-					href="https://themeforest.net/item/chisfis-online-booking-nextjs-template/43399526"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					<ButtonPrimary>Get Template</ButtonPrimary>
-				</a>
-
-				<LangDropdown
-					className="flex"
-					panelClassName="z-10 w-screen max-w-[280px] px-4 mb-3 end-3 bottom-full sm:px-0"
-				/>
-			</div>
 		</div>
 	)
 }

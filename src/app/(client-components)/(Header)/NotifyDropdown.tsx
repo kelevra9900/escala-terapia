@@ -12,11 +12,10 @@ import {BellIcon} from '@heroicons/react/24/outline'
 import avatar4 from '@/images/avatars/Image-4.png'
 import avatar5 from '@/images/avatars/Image-5.png'
 import avatar6 from '@/images/avatars/Image-6.png'
-import T from '@/utils/getT'
 
 const notifications = [
 	{
-		name: 'Eden Tuan',
+		name: 'Roger Torres',
 		description: 'Measure actions your users take',
 		time: '3 minutes ago',
 		href: '#a',
