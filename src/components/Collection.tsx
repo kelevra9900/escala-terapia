@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React,{FC} from 'react'
 import ButtonSecondary from '@/shared/ButtonSecondary'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -19,7 +19,7 @@ const Collection: FC<CollectionProps> = ({
 	color,
 }) => {
 	return (
-		<Link href={'/listing-stay'} className={`nc-Collection block ${className}`}>
+		<Link href={'#'} className={`nc-Collection block ${className}`}>
 			<div
 				className={`group aspect-h-11 aspect-w-16 relative h-0 w-full overflow-hidden rounded-2xl sm:aspect-h-10 ${color}`}
 			>
@@ -43,7 +43,7 @@ const Collection: FC<CollectionProps> = ({
 							{desc && (
 								<h2
 									className={`text-xl font-semibold text-slate-900 md:text-2xl`}
-									dangerouslySetInnerHTML={{ __html: desc }}
+									dangerouslySetInnerHTML={{__html: desc}}
 								></h2>
 							)}
 						</div>

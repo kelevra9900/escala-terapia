@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React,{FC} from 'react'
 import imagePng from '@/images/hero-right.png'
 import HeroSearchForm from '../(client-components)/(HeroSearchForm)/HeroSearchForm'
 import Image from 'next/image'
@@ -9,7 +9,7 @@ export interface SectionHeroProps {
 	className?: string
 }
 
-const SectionHero: FC<SectionHeroProps> = ({ className = '' }) => {
+const SectionHero: FC<SectionHeroProps> = ({className = ''}) => {
 	return (
 		<div
 			className={`nc-SectionHero relative flex flex-col-reverse lg:flex-col ${className}`}
@@ -22,7 +22,7 @@ const SectionHero: FC<SectionHeroProps> = ({ className = '' }) => {
 					<span className="text-base text-neutral-500 dark:text-neutral-400 md:text-lg">
 						{T['homePage']['sectionHero']['description']}
 					</span>
-					<ButtonPrimary href="/listing-stay-map" sizeClass="px-5 py-4 sm:px-7">
+					<ButtonPrimary href="#-map" sizeClass="px-5 py-4 sm:px-7">
 						{T['homePage']['sectionHero']['button']}
 					</ButtonPrimary>
 				</div>

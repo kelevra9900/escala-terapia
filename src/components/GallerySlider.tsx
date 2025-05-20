@@ -1,13 +1,13 @@
 'use client'
 
-import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
-import { AnimatePresence, motion, MotionConfig } from 'framer-motion'
-import Image, { StaticImageData } from 'next/image'
-import { useState } from 'react'
-import { useSwipeable } from 'react-swipeable'
-import { variants } from '@/utils/animationVariants'
+import {ChevronLeftIcon,ChevronRightIcon} from '@heroicons/react/24/outline'
+import {AnimatePresence,motion,MotionConfig} from 'framer-motion'
+import Image,{StaticImageData} from 'next/image'
+import {useState} from 'react'
+import {useSwipeable} from 'react-swipeable'
+import {variants} from '@/utils/animationVariants'
 import Link from 'next/link'
-import { Route } from '@/routers/types'
+import {Route} from '@/routers/types'
 
 export interface GallerySliderProps {
 	className?: string
@@ -27,12 +27,12 @@ export default function GallerySlider({
 	imageClass = '',
 	uniqueID = 'uniqueID',
 	galleryClass = 'rounded-xl',
-	href = '/listing-stay-detail',
+	href = '#-detail',
 	navigation = true,
 }: GallerySliderProps) {
-	const [loaded, setLoaded] = useState(false)
-	const [index, setIndex] = useState(0)
-	const [direction, setDirection] = useState(0)
+	const [loaded,setLoaded] = useState(false)
+	const [index,setIndex] = useState(0)
+	const [direction,setDirection] = useState(0)
 	const images = galleryImgs
 
 	function changePhotoId(newVal: number) {
@@ -71,8 +71,8 @@ export default function GallerySlider({
 	return (
 		<MotionConfig
 			transition={{
-				x: { type: 'spring', stiffness: 300, damping: 30 },
-				opacity: { duration: 0.2 },
+				x: {type: 'spring',stiffness: 300,damping: 30},
+				opacity: {duration: 0.2},
 			}}
 		>
 			<div
@@ -89,7 +89,7 @@ export default function GallerySlider({
 							<motion.div
 								key={index}
 								custom={direction}
-								variants={variants(340, 1)}
+								variants={variants(340,1)}
 								initial="enter"
 								animate="center"
 								exit="exit"
@@ -135,11 +135,10 @@ export default function GallerySlider({
 					{/* Bottom Nav bar */}
 					<div className="absolute inset-x-0 bottom-0 h-10 rounded-b-lg bg-gradient-to-t from-neutral-900 opacity-50"></div>
 					<div className="absolute bottom-2 left-1/2 flex -translate-x-1/2 items-center justify-center gap-x-1.5">
-						{images.map((_, i) => (
+						{images.map((_,i) => (
 							<button
-								className={`h-1.5 w-1.5 rounded-full ${
-									i === index ? 'bg-white' : 'bg-white/60'
-								}`}
+								className={`h-1.5 w-1.5 rounded-full ${i === index ? 'bg-white' : 'bg-white/60'
+									}`}
 								onClick={() => changePhotoId(i)}
 								key={i}
 							/>

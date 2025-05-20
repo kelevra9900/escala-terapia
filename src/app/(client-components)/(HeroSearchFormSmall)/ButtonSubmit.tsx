@@ -1,7 +1,7 @@
 'use client'
 
-import React, { FC } from 'react'
-import { PathName } from '@/routers/types'
+import React,{FC} from 'react'
+import {PathName} from '@/routers/types'
 import Link from 'next/link'
 
 interface Props {
@@ -11,7 +11,7 @@ interface Props {
 
 const ButtonSubmit: FC<Props> = ({
 	className = '',
-	href = '/listing-stay-map',
+	href = '#',
 }) => {
 	return (
 		<Link
@@ -19,7 +19,7 @@ const ButtonSubmit: FC<Props> = ({
 			type="button"
 			className={`bg-primary-600 flex h-14 w-14 items-center justify-center rounded-full text-neutral-50 hover:bg-primary-700 focus:outline-none ${className}`}
 			onClick={() => {
-				;(document.querySelector('.nc-Footer') as HTMLElement | null)?.click()
+				; (document.querySelector('.nc-Footer') as HTMLElement | null)?.click()
 			}}
 		>
 			<span className="mr-3 md:hidden">Search</span>

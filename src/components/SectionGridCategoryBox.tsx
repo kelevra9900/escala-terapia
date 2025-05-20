@@ -1,6 +1,6 @@
 import CardCategoryBox1 from '@/components/CardCategoryBox1'
 import Heading from '@/shared/Heading'
-import { TaxonomyType } from '@/data/types'
+import {TaxonomyType} from '@/data/types'
 import React from 'react'
 
 export interface SectionGridCategoryBoxProps {
@@ -14,7 +14,7 @@ export interface SectionGridCategoryBoxProps {
 const DEMO_CATS: TaxonomyType[] = [
 	{
 		id: '1',
-		href: '/listing-stay-map',
+		href: '#-map',
 		name: 'New Yourk',
 		taxonomy: 'category',
 		count: 1882,
@@ -23,7 +23,7 @@ const DEMO_CATS: TaxonomyType[] = [
 	},
 	{
 		id: '2',
-		href: '/listing-stay-map',
+		href: '#-map',
 		name: 'Singapore',
 		taxonomy: 'category',
 		count: 8288,
@@ -32,7 +32,7 @@ const DEMO_CATS: TaxonomyType[] = [
 	},
 	{
 		id: '3',
-		href: '/listing-stay-map',
+		href: '#-map',
 		name: 'Paris',
 		taxonomy: 'category',
 		count: 1288,
@@ -41,7 +41,7 @@ const DEMO_CATS: TaxonomyType[] = [
 	},
 	{
 		id: '4',
-		href: '/listing-stay-map',
+		href: '#-map',
 		name: 'London',
 		taxonomy: 'category',
 		count: 112,
@@ -50,7 +50,7 @@ const DEMO_CATS: TaxonomyType[] = [
 	},
 	{
 		id: '5',
-		href: '/listing-stay-map',
+		href: '#-map',
 		name: 'Tokyo',
 		taxonomy: 'category',
 		count: 323,
@@ -59,7 +59,7 @@ const DEMO_CATS: TaxonomyType[] = [
 	},
 	{
 		id: '6',
-		href: '/listing-stay-map',
+		href: '#-map',
 		name: 'Maldives',
 		taxonomy: 'category',
 		count: 2223,
@@ -68,7 +68,7 @@ const DEMO_CATS: TaxonomyType[] = [
 	},
 	{
 		id: '7',
-		href: '/listing-stay-map',
+		href: '#-map',
 		name: 'New Yourk',
 		taxonomy: 'category',
 		count: 1775,
@@ -77,7 +77,7 @@ const DEMO_CATS: TaxonomyType[] = [
 	},
 	{
 		id: '8',
-		href: '/listing-stay-map',
+		href: '#-map',
 		name: 'Singapore',
 		taxonomy: 'category',
 		count: 1288,
@@ -112,7 +112,7 @@ const SectionGridCategoryBox: React.FC<SectionGridCategoryBoxProps> = ({
 				Explore nearby
 			</Heading>
 			<div className={`grid ${gridClassName} gap-5 sm:gap-6 md:gap-8`}>
-				{categories.map((item, i) => (
+				{categories.map((item,i) => (
 					<CardComponentName key={i} taxonomy={item} />
 				))}
 			</div>

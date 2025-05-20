@@ -1,33 +1,30 @@
 'use client'
 
-import DatePicker from 'react-datepicker'
 import {
 	Dialog,
 	DialogPanel,
 	Transition,
 	TransitionChild,
 } from '@headlessui/react'
-import { XMarkIcon } from '@heroicons/react/24/solid'
-import React, { FC, Fragment, useEffect, useState } from 'react'
+import {XMarkIcon} from '@heroicons/react/24/solid'
+import React,{FC,Fragment,useState} from 'react'
 import ButtonPrimary from '@/shared/ButtonPrimary'
-import DatePickerCustomHeaderTwoMonth from './DatePickerCustomHeaderTwoMonth'
-import DatePickerCustomDay from './DatePickerCustomDay'
 import T from '@/utils/getT'
 
 interface ModalSelectDateProps {
-	renderChildren?: (p: { openModal: () => void }) => React.ReactNode
+	renderChildren?: (p: {openModal: () => void}) => React.ReactNode
 }
 
-const ModalSelectDate: FC<ModalSelectDateProps> = ({ renderChildren }) => {
-	const [showModal, setShowModal] = useState(false)
+const ModalSelectDate: FC<ModalSelectDateProps> = ({renderChildren}) => {
+	const [showModal,setShowModal] = useState(false)
 
-	const [startDate, setStartDate] = useState<Date | null>(
+	const [startDate,setStartDate] = useState<Date | null>(
 		new Date('2023/02/06'),
 	)
-	const [endDate, setEndDate] = useState<Date | null>(new Date('2023/02/23'))
+	const [endDate,setEndDate] = useState<Date | null>(new Date('2023/02/23'))
 
-	const onChangeDate = (dates: [Date | null, Date | null]) => {
-		const [start, end] = dates
+	const onChangeDate = (dates: [Date | null,Date | null]) => {
+		const [start,end] = dates
 		setStartDate(start)
 		setEndDate(end)
 	}
@@ -44,7 +41,7 @@ const ModalSelectDate: FC<ModalSelectDateProps> = ({ renderChildren }) => {
 
 	const renderButtonOpenModal = () => {
 		return renderChildren ? (
-			renderChildren({ openModal })
+			renderChildren({openModal})
 		) : (
 			<button onClick={openModal}>{T['common']['Select Date']}</button>
 		)
@@ -91,25 +88,7 @@ const ModalSelectDate: FC<ModalSelectDateProps> = ({ renderChildren }) => {
 													</div>
 													<div className="relative z-10 flex flex-1 p-5">
 														<div className="overflow-hidden rounded-3xl">
-															<DatePicker
-																selected={startDate}
-																onChange={onChangeDate}
-																startDate={startDate}
-																endDate={endDate}
-																selectsRange
-																monthsShown={2}
-																showPopperArrow={false}
-																inline
-																renderCustomHeader={(p) => (
-																	<DatePickerCustomHeaderTwoMonth {...p} />
-																)}
-																renderDayContents={(day, date) => (
-																	<DatePickerCustomDay
-																		dayOfMonth={day}
-																		date={date}
-																	/>
-																)}
-															/>
+
 														</div>
 													</div>
 												</div>
@@ -120,7 +99,7 @@ const ModalSelectDate: FC<ModalSelectDateProps> = ({ renderChildren }) => {
 												type="button"
 												className="flex-shrink-0 font-semibold underline"
 												onClick={() => {
-													onChangeDate([null, null])
+													onChangeDate([null,null])
 												}}
 											>
 												{T['common']['Clear dates']}

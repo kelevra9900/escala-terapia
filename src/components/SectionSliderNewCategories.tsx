@@ -1,7 +1,7 @@
 'use client'
 
-import React, { FC, useRef } from 'react'
-import { TaxonomyType } from '@/data/types'
+import React,{FC,useRef} from 'react'
+import {TaxonomyType} from '@/data/types'
 import CardCategory3 from '@/components/CardCategory3'
 import CardCategory4 from '@/components/CardCategory4'
 import CardCategory5 from '@/components/CardCategory5'
@@ -24,7 +24,7 @@ export interface SectionSliderNewCategoriesProps {
 const DEMO_CATS: TaxonomyType[] = [
 	{
 		id: '1',
-		href: '/listing-stay-map',
+		href: '#-map',
 		name: 'Nature House',
 		taxonomy: 'category',
 		count: 17288,
@@ -33,7 +33,7 @@ const DEMO_CATS: TaxonomyType[] = [
 	},
 	{
 		id: '2',
-		href: '/listing-stay-map',
+		href: '#-map',
 		name: 'Wooden house',
 		taxonomy: 'category',
 		count: 2118,
@@ -42,7 +42,7 @@ const DEMO_CATS: TaxonomyType[] = [
 	},
 	{
 		id: '3',
-		href: '/listing-stay-map',
+		href: '#-map',
 		name: 'Houseboat',
 		taxonomy: 'category',
 		count: 36612,
@@ -51,7 +51,7 @@ const DEMO_CATS: TaxonomyType[] = [
 	},
 	{
 		id: '4',
-		href: '/listing-stay-map',
+		href: '#-map',
 		name: 'Farm House',
 		taxonomy: 'category',
 		count: 18188,
@@ -60,7 +60,7 @@ const DEMO_CATS: TaxonomyType[] = [
 	},
 	{
 		id: '5',
-		href: '/listing-stay-map',
+		href: '#-map',
 		name: 'Dome House',
 		taxonomy: 'category',
 		count: 22288,
@@ -69,7 +69,7 @@ const DEMO_CATS: TaxonomyType[] = [
 	},
 	{
 		id: '6',
-		href: '/listing-stay-map',
+		href: '#-map',
 		name: 'Dome House',
 		taxonomy: 'category',
 		count: 188288,
@@ -78,7 +78,7 @@ const DEMO_CATS: TaxonomyType[] = [
 	},
 	{
 		id: '7',
-		href: '/listing-stay-map',
+		href: '#-map',
 		name: 'Wooden house',
 		taxonomy: 'category',
 		count: 2118,
@@ -87,7 +87,7 @@ const DEMO_CATS: TaxonomyType[] = [
 	},
 	{
 		id: '8',
-		href: '/listing-stay-map',
+		href: '#-map',
 		name: 'Wooden Dome',
 		taxonomy: 'category',
 		count: 515,
@@ -106,8 +106,8 @@ const SectionSliderNewCategories: FC<SectionSliderNewCategoriesProps> = ({
 	sliderStyle = 'style1',
 }) => {
 	const sliderRef = useRef<HTMLDivElement>(null)
-	const { scrollToNextSlide, scrollToPrevSlide, isAtEnd, isAtStart } =
-		useSnapSlider({ sliderRef })
+	const {scrollToNextSlide,scrollToPrevSlide,isAtEnd,isAtStart} =
+		useSnapSlider({sliderRef})
 
 	const renderCard = (item: TaxonomyType) => {
 		switch (categoryCardType) {
@@ -133,7 +133,7 @@ const SectionSliderNewCategories: FC<SectionSliderNewCategoriesProps> = ({
 					ref={sliderRef}
 					className="hiddenScrollbar relative -mx-2 flex snap-x snap-mandatory overflow-x-auto lg:-mx-3.5"
 				>
-					{categories.map((item, indx) => (
+					{categories.map((item,indx) => (
 						<div
 							className={`mySnapItem shrink-0 snap-start px-2 lg:px-3.5 ${itemClassName}`}
 							key={indx}
@@ -144,13 +144,13 @@ const SectionSliderNewCategories: FC<SectionSliderNewCategoriesProps> = ({
 				</div>
 
 				<PrevBtn
-					style={{ visibility: isAtStart ? 'hidden' : 'visible' }}
+					style={{visibility: isAtStart ? 'hidden' : 'visible'}}
 					onClick={scrollToPrevSlide}
 					className="absolute -start-3 top-[40%] z-[1] h-9 w-9 -translate-y-1/2 text-lg xl:-start-6 xl:h-12 xl:w-12"
 				/>
 
 				<NextBtn
-					style={{ visibility: isAtEnd ? 'hidden' : 'visible' }}
+					style={{visibility: isAtEnd ? 'hidden' : 'visible'}}
 					onClick={scrollToNextSlide}
 					className="absolute -end-3 top-[40%] z-[1] h-9 w-9 -translate-y-1/2 text-lg xl:-end-6 xl:h-12 xl:w-12"
 				/>

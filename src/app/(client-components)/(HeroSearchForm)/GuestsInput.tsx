@@ -1,6 +1,6 @@
 'use client'
 
-import React, { Fragment, useState } from 'react'
+import React,{Fragment,useState} from 'react'
 import {
 	Popover,
 	PopoverButton,
@@ -8,12 +8,12 @@ import {
 	Transition,
 } from '@headlessui/react'
 import NcInputNumber from '@/components/NcInputNumber'
-import { FC } from 'react'
+import {FC} from 'react'
 import ClearDataButton from './ClearDataButton'
 import ButtonSubmit from './ButtonSubmit'
-import { PathName } from '@/routers/types'
-import { UserPlusIcon } from '@heroicons/react/24/outline'
-import { GuestsObject } from '../type'
+import {PathName} from '@/routers/types'
+import {UserPlusIcon} from '@heroicons/react/24/outline'
+import {GuestsObject} from '../type'
 import T from '@/utils/getT'
 
 export interface GuestsInputProps {
@@ -26,14 +26,14 @@ export interface GuestsInputProps {
 const GuestsInput: FC<GuestsInputProps> = ({
 	fieldClassName = 'nc-hero-field-padding',
 	className = 'nc-flex-1 ',
-	buttonSubmitHref = '/listing-stay-map',
+	buttonSubmitHref = '#',
 	hasButtonSubmit = true,
 }) => {
-	const [guestAdultsInputValue, setGuestAdultsInputValue] = useState(2)
-	const [guestChildrenInputValue, setGuestChildrenInputValue] = useState(1)
-	const [guestInfantsInputValue, setGuestInfantsInputValue] = useState(1)
+	const [guestAdultsInputValue,setGuestAdultsInputValue] = useState(2)
+	const [guestChildrenInputValue,setGuestChildrenInputValue] = useState(1)
+	const [guestInfantsInputValue,setGuestInfantsInputValue] = useState(1)
 
-	const handleChangeData = (value: number, type: keyof GuestsObject) => {
+	const handleChangeData = (value: number,type: keyof GuestsObject) => {
 		let newValue = {
 			guestAdults: guestAdultsInputValue,
 			guestChildren: guestChildrenInputValue,
@@ -58,12 +58,11 @@ const GuestsInput: FC<GuestsInputProps> = ({
 
 	return (
 		<Popover className={`relative flex ${className}`}>
-			{({ open }) => (
+			{({open}) => (
 				<>
 					<div
-						className={`z-10 flex flex-1 items-center focus:outline-none ${
-							open ? 'nc-hero-field-focused' : ''
-						}`}
+						className={`z-10 flex flex-1 items-center focus:outline-none ${open ? 'nc-hero-field-focused' : ''
+							}`}
 					>
 						<PopoverButton
 							className={`relative z-10 flex flex-1 items-center text-start ${fieldClassName} gap-x-3 focus:outline-none`}
@@ -117,7 +116,7 @@ const GuestsInput: FC<GuestsInputProps> = ({
 							<NcInputNumber
 								className="w-full"
 								defaultValue={guestAdultsInputValue}
-								onChange={(value) => handleChangeData(value, 'guestAdults')}
+								onChange={(value) => handleChangeData(value,'guestAdults')}
 								max={10}
 								min={1}
 								label={T['HeroSearchForm']['Adults']}
@@ -126,7 +125,7 @@ const GuestsInput: FC<GuestsInputProps> = ({
 							<NcInputNumber
 								className="mt-6 w-full"
 								defaultValue={guestChildrenInputValue}
-								onChange={(value) => handleChangeData(value, 'guestChildren')}
+								onChange={(value) => handleChangeData(value,'guestChildren')}
 								max={4}
 								label={T['HeroSearchForm']['Children']}
 								desc={T['HeroSearchForm']['Ages 2–12']}
@@ -135,7 +134,7 @@ const GuestsInput: FC<GuestsInputProps> = ({
 							<NcInputNumber
 								className="mt-6 w-full"
 								defaultValue={guestInfantsInputValue}
-								onChange={(value) => handleChangeData(value, 'guestInfants')}
+								onChange={(value) => handleChangeData(value,'guestInfants')}
 								max={4}
 								label={T['HeroSearchForm']['Infants']}
 								desc={T['HeroSearchForm']['Ages 0–2']}

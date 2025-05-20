@@ -6,9 +6,9 @@ import {
 	PopoverPanel,
 	Transition,
 } from '@headlessui/react'
-import { ChevronDownIcon } from '@heroicons/react/24/solid'
-import { Fragment } from 'react'
-import { PathName } from '@/routers/types'
+import {ChevronDownIcon} from '@heroicons/react/24/solid'
+import {Fragment} from 'react'
+import {PathName} from '@/routers/types'
 import Link from 'next/link'
 import {
 	Backpack01Icon,
@@ -30,26 +30,26 @@ const solutions: SolutionItem[] = [
 	{
 		name: T['Header']['DropdownTravelers']['Stays'],
 		description: T['Header']['DropdownTravelers']['stayDescription'],
-		href: '/listing-stay',
+		href: '#',
 		active: true,
 		icon: House04Icon,
 	},
 	{
 		name: T['Header']['DropdownTravelers']['Real Estate'],
 		description: T['Header']['DropdownTravelers']['estateDescription'],
-		href: '/listing-real-estate',
+		href: '#',
 		icon: RealEstate02Icon,
 	},
 	{
 		name: T['Header']['DropdownTravelers']['Cars'],
 		description: T['Header']['DropdownTravelers']['carDescription'],
-		href: '/listing-car',
+		href: '#',
 		icon: Car01Icon,
 	},
 	{
 		name: T['Header']['DropdownTravelers']['Experiences'],
 		description: T['Header']['DropdownTravelers']['experienceDescription'],
-		href: '/listing-experiences',
+		href: '#',
 		icon: Backpack01Icon,
 	},
 ]
@@ -57,7 +57,7 @@ const solutions: SolutionItem[] = [
 export default function DropdownTravelers() {
 	return (
 		<Popover className="DropdownTravelers relative flex">
-			{({ open, close }) => (
+			{({open,close}) => (
 				<>
 					<PopoverButton
 						className={`${open ? '' : 'text-opacity-90'} group h-10 self-center rounded-md py-2 text-sm font-medium hover:text-opacity-100 focus:outline-none sm:h-12 sm:text-base`}
@@ -82,16 +82,15 @@ export default function DropdownTravelers() {
 						<PopoverPanel className="absolute left-1/2 top-full z-40 w-screen max-w-xs -translate-x-1/2 px-4 sm:px-0">
 							<div className="overflow-hidden rounded-2xl shadow-lg ring-1 ring-black ring-opacity-5">
 								<div className="relative grid grid-cols-1 gap-7 bg-white p-7 dark:bg-neutral-800">
-									{solutions.map((item, index) => (
+									{solutions.map((item,index) => (
 										<Link
 											key={index}
 											href={item.href}
 											onClick={() => close()}
-											className={`-m-3 flex items-center rounded-lg p-2 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50 ${
-												item.active
+											className={`-m-3 flex items-center rounded-lg p-2 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50 ${item.active
 													? 'bg-neutral-50 dark:bg-neutral-700'
 													: 'hover:bg-neutral-50 dark:hover:bg-neutral-700'
-											}`}
+												}`}
 										>
 											<div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-neutral-50 text-primary-500 sm:h-12 sm:w-12">
 												<item.icon aria-hidden="true" className="h-7 w-7" />

@@ -1,6 +1,6 @@
 'use client'
 
-import React, { Fragment, useState, FC } from 'react'
+import React,{Fragment,useState,FC} from 'react'
 import {
 	Popover,
 	PopoverButton,
@@ -10,7 +10,7 @@ import {
 import Slider from 'rc-slider'
 import convertNumbThousand from '@/utils/convertNumbThousand'
 import ButtonSubmit from '../ButtonSubmit'
-import { CurrencyDollarIcon } from '@heroicons/react/24/outline'
+import {CurrencyDollarIcon} from '@heroicons/react/24/outline'
 import T from '@/utils/getT'
 
 export interface PriceRangeInputProps {
@@ -22,16 +22,15 @@ const PriceRangeInput: FC<PriceRangeInputProps> = ({
 	onChange,
 	fieldClassName = 'nc-hero-field-padding ',
 }) => {
-	const [rangePrices, setRangePrices] = useState([100000, 4000000])
+	const [rangePrices,setRangePrices] = useState([100000,4000000])
 
 	return (
 		<Popover className="relative flex flex-[1.3]">
-			{({ open, close }) => (
+			{({open,close}) => (
 				<>
 					<div
-						className={`z-10 flex flex-1 cursor-pointer items-center focus:outline-none ${
-							open ? 'nc-hero-field-focused' : ''
-						}`}
+						className={`z-10 flex flex-1 cursor-pointer items-center focus:outline-none ${open ? 'nc-hero-field-focused' : ''
+							}`}
 					>
 						<PopoverButton
 							className={`flex flex-1 items-center text-start focus:outline-none ${fieldClassName} gap-x-3`}
@@ -54,7 +53,7 @@ const PriceRangeInput: FC<PriceRangeInputProps> = ({
 
 						{/* BUTTON SUBMIT OF FORM */}
 						<div className="pe-2 xl:pe-4">
-							<ButtonSubmit href="/listing-real-estate" />
+							<ButtonSubmit href="#" />
 						</div>
 					</div>
 
@@ -82,7 +81,7 @@ const PriceRangeInput: FC<PriceRangeInputProps> = ({
 										className="text-red-400"
 										min={10000}
 										max={10000000}
-										defaultValue={[rangePrices[0], rangePrices[1]]}
+										defaultValue={[rangePrices[0],rangePrices[1]]}
 										allowCross={false}
 										step={1000}
 										onChange={(e) => setRangePrices(e as number[])}

@@ -1,11 +1,11 @@
 'use client'
 
-import React, { FC, useEffect, useState, ReactNode } from 'react'
+import React,{FC,useEffect,useState,ReactNode} from 'react'
 import Heading from '@/shared/Heading'
 import Nav from '@/shared/Nav'
 import NavItem from '@/shared/NavItem'
 import ButtonSecondary from '@/shared/ButtonSecondary'
-import { ArrowRightIcon } from '@heroicons/react/24/outline'
+import {ArrowRightIcon} from '@heroicons/react/24/outline'
 import T from '@/utils/getT'
 
 export interface HeaderFilterProps {
@@ -21,13 +21,13 @@ const HeaderFilter: FC<HeaderFilterProps> = ({
 	tabs,
 	subHeading = '',
 	heading = 'Latest Articles 🎈',
-	onClickTab = () => {},
+	onClickTab = () => { },
 }) => {
-	const [tabActiveState, setTabActiveState] = useState(tabActive)
+	const [tabActiveState,setTabActiveState] = useState(tabActive)
 
 	useEffect(() => {
 		setTabActiveState(tabActive)
-	}, [tabActive])
+	},[tabActive])
 
 	const handleClickTab = (item: string) => {
 		onClickTab(item)
@@ -42,7 +42,7 @@ const HeaderFilter: FC<HeaderFilterProps> = ({
 					className="sm:gap-x-2"
 					containerClassName="relative flex w-full overflow-x-auto text-sm md:text-base hiddenScrollbar"
 				>
-					{tabs.map((item, index) => (
+					{tabs.map((item,index) => (
 						<NavItem
 							key={index}
 							isActive={tabActiveState === item}
@@ -53,7 +53,7 @@ const HeaderFilter: FC<HeaderFilterProps> = ({
 					))}
 				</Nav>
 				<span className="hidden flex-shrink-0 sm:block">
-					<ButtonSecondary href="/listing-stay" className="!leading-none">
+					<ButtonSecondary href="#" className="!leading-none">
 						<div className="flex items-center justify-center">
 							<span>{T['common']['View all']}</span>
 							<ArrowRightIcon className="ms-3 h-5 w-5 rtl:rotate-180" />

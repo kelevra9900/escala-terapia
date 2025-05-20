@@ -1,14 +1,14 @@
-import React, { FC } from 'react'
+import React,{FC} from 'react'
 import LocationInput from '../LocationInput'
 import GuestsInput from '../GuestsInput'
 import StayDatesRangeInput from './StayDatesRangeInput'
-import { StaySearchFormFields } from '../../type'
+import {StaySearchFormFields} from '../../type'
 
 export interface StaySearchFormProps {
 	defaultFieldFocus?: StaySearchFormFields
 }
 
-const StaySearchForm: FC<StaySearchFormProps> = ({ defaultFieldFocus }) => {
+const StaySearchForm: FC<StaySearchFormProps> = ({defaultFieldFocus}) => {
 	const renderForm = () => {
 		return (
 			<form className="relative flex rounded-full border border-neutral-200 bg-white dark:border-neutral-700 dark:bg-neutral-800">
@@ -23,7 +23,7 @@ const StaySearchForm: FC<StaySearchFormProps> = ({ defaultFieldFocus }) => {
 				<GuestsInput
 					className="flex-1"
 					autoFocus={defaultFieldFocus === 'guests'}
-					submitLink="/listing-stay"
+					submitLink="#"
 				/>
 			</form>
 		)

@@ -1,16 +1,13 @@
 'use client'
 
-import React, { Fragment, useState, FC } from 'react'
-import DatePicker from 'react-datepicker'
+import React,{Fragment,useState,FC} from 'react'
 import {
 	Popover,
 	PopoverButton,
 	PopoverPanel,
 	Transition,
 } from '@headlessui/react'
-import { CalendarIcon } from '@heroicons/react/24/outline'
-import DatePickerCustomHeaderTwoMonth from '@/components/DatePickerCustomHeaderTwoMonth'
-import DatePickerCustomDay from '@/components/DatePickerCustomDay'
+import {CalendarIcon} from '@heroicons/react/24/outline'
 import ClearDataButton from '../ClearDataButton'
 import T from '@/utils/getT'
 
@@ -23,13 +20,13 @@ const ExperiencesDateSingleInput: FC<ExperiencesDateSingleInputProps> = ({
 	className = '',
 	fieldClassName = 'nc-hero-field-padding',
 }) => {
-	const [startDate, setStartDate] = useState<Date | null>(
+	const [startDate,setStartDate] = useState<Date | null>(
 		new Date('2023/03/01'),
 	)
-	const [endDate, setEndDate] = useState<Date | null>(new Date('2023/03/16'))
+	const [endDate,setEndDate] = useState<Date | null>(new Date('2023/03/16'))
 
-	const onChangeDate = (dates: [Date | null, Date | null]) => {
-		const [start, end] = dates
+	const onChangeDate = (dates: [Date | null,Date | null]) => {
+		const [start,end] = dates
 		setStartDate(start)
 		setEndDate(end)
 	}
@@ -42,16 +39,16 @@ const ExperiencesDateSingleInput: FC<ExperiencesDateSingleInputProps> = ({
 				</div>
 				<div className="flex-grow text-start">
 					<span className="block font-semibold xl:text-lg">
-						{startDate?.toLocaleDateString('en-US', {
+						{startDate?.toLocaleDateString('en-US',{
 							month: 'short',
 							day: '2-digit',
 						}) || T['HeroSearchForm']['Date']}
 						{endDate
 							? ' - ' +
-								endDate?.toLocaleDateString('en-US', {
-									month: 'short',
-									day: '2-digit',
-								})
+							endDate?.toLocaleDateString('en-US',{
+								month: 'short',
+								day: '2-digit',
+							})
 							: ''}
 					</span>
 					<span className="mt-1 block text-sm font-light leading-none text-neutral-400">
@@ -69,16 +66,15 @@ const ExperiencesDateSingleInput: FC<ExperiencesDateSingleInputProps> = ({
 			<Popover
 				className={`ExperiencesDateSingleInput relative flex ${className}`}
 			>
-				{({ open }) => (
+				{({open}) => (
 					<>
 						<PopoverButton
-							className={`relative z-10 flex flex-1 ${fieldClassName} items-center gap-x-3 focus:outline-none ${
-								open ? 'nc-hero-field-focused' : ''
-							}`}
+							className={`relative z-10 flex flex-1 ${fieldClassName} items-center gap-x-3 focus:outline-none ${open ? 'nc-hero-field-focused' : ''
+								}`}
 						>
 							{renderInput()}
 							{startDate && open && (
-								<ClearDataButton onClick={() => onChangeDate([null, null])} />
+								<ClearDataButton onClick={() => onChangeDate([null,null])} />
 							)}
 						</PopoverButton>
 
@@ -97,22 +93,7 @@ const ExperiencesDateSingleInput: FC<ExperiencesDateSingleInputProps> = ({
 						>
 							<PopoverPanel className="absolute left-1/2 top-full z-10 mt-3 w-screen max-w-sm -translate-x-1/2 transform px-4 sm:px-0 lg:max-w-3xl">
 								<div className="overflow-hidden rounded-3xl bg-white p-8 shadow-lg ring-1 ring-black ring-opacity-5 dark:bg-neutral-800">
-									<DatePicker
-										selected={startDate}
-										onChange={onChangeDate}
-										startDate={startDate}
-										endDate={endDate}
-										selectsRange
-										monthsShown={2}
-										showPopperArrow={false}
-										inline
-										renderCustomHeader={(p) => (
-											<DatePickerCustomHeaderTwoMonth {...p} />
-										)}
-										renderDayContents={(day, date) => (
-											<DatePickerCustomDay dayOfMonth={day} date={date} />
-										)}
-									/>
+
 								</div>
 							</PopoverPanel>
 						</Transition>

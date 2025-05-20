@@ -1,14 +1,14 @@
-import { Search01Icon } from '@/components/Icons'
-import { PathName } from '@/routers/types'
+import {Search01Icon} from '@/components/Icons'
+import {PathName} from '@/routers/types'
 import T from '@/utils/getT'
 import Link from 'next/link'
-import React, { FC } from 'react'
+import React,{FC} from 'react'
 
 interface Props {
 	href?: PathName
 }
 
-const ButtonSubmit: FC<Props> = ({ href = '/listing-stay-map' }) => {
+const ButtonSubmit: FC<Props> = ({href = '#-map'}) => {
 	return (
 		<Link
 			href={href}

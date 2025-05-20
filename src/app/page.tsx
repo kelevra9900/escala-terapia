@@ -8,10 +8,10 @@ import SectionGridAuthorBox from '@/components/SectionGridAuthorBox'
 import SectionBecomeAnAuthor from '@/components/SectionBecomeAnAuthor'
 import SectionVideos from '@/components/SectionVideos'
 import SectionClientSay from '@/components/SectionClientSay'
-import {PricingItem,pricings} from './subscription/page'
 import ButtonPrimary from '@/shared/ButtonPrimary'
 import ButtonSecondary from '@/shared/ButtonSecondary'
 import SectionHero2 from './(server-components)/SectionHero2'
+import {PricingItem,pricings} from '@/utils'
 
 const renderPricingItem = (pricing: PricingItem,index: number) => {
 	return (

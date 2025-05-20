@@ -1,6 +1,6 @@
-import React, { FC } from 'react'
-import { PathName } from '@/routers/types'
-import { Search01Icon } from '@/components/Icons'
+import React,{FC} from 'react'
+import {PathName} from '@/routers/types'
+import {Search01Icon} from '@/components/Icons'
 import T from '@/utils/getT'
 
 interface Props {
@@ -10,8 +10,8 @@ interface Props {
 }
 const ButtonSubmit: FC<Props> = ({
 	className = '',
-	onClick = () => {},
-	href = '/listing-stay',
+	onClick = () => { },
+	href = '#',
 }) => {
 	return (
 		<button
