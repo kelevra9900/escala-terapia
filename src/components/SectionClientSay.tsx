@@ -1,16 +1,16 @@
 'use client'
 
 import Heading from '@/shared/Heading'
-import React, { FC, useState } from 'react'
+import React,{FC,useState} from 'react'
 import clientSayMain from '@/images/clientSayMain.png'
 import sectionClientSayBG from '@/images/SectionClientSayBG.png'
 import quotationImg from '@/images/quotation.png'
 import quotationImg2 from '@/images/quotation2.png'
-import { MapPinIcon } from '@heroicons/react/24/outline'
-import { AnimatePresence, motion, MotionConfig } from 'framer-motion'
+import {MapPinIcon} from '@heroicons/react/24/outline'
+import {AnimatePresence,motion,MotionConfig} from 'framer-motion'
 import Image from 'next/image'
-import { useSwipeable } from 'react-swipeable'
-import { variants } from '@/utils/animationVariants'
+import {useSwipeable} from 'react-swipeable'
+import {variants} from '@/utils/animationVariants'
 
 export interface SectionClientSayProps {
 	className?: string
@@ -20,33 +20,34 @@ export interface SectionClientSayProps {
 const DEMO_DATA = [
 	{
 		id: 1,
-		clientName: 'Tiana Abie',
-		clientAddress: 'Malaysia',
+		clientName: 'Dra. Fernanda López',
+		clientAddress: 'Ciudad de México',
 		content:
-			'This place is exactly like the picture posted on Chisfis. Great service, we had a great stay!',
+			'La herramienta me ha permitido aplicar formularios como el BAI en minutos. Mis pacientes los responden desde casa y los resultados me llegan listos para consulta.',
 	},
 	{
 		id: 2,
-		clientName: 'Lennie Swiffan',
-		clientAddress: 'London',
+		clientName: 'Psic. Manuel Rivas',
+		clientAddress: 'Monterrey, NL',
 		content:
-			'This place is exactly like the picture posted on Chisfis. Great service, we had a great stay!',
+			'Desde que empecé a usar esta plataforma, reduzco el tiempo que invertía en procesar respuestas. Ahora me enfoco en la intervención, no en el papeleo.',
 	},
 	{
 		id: 3,
-		clientName: 'Berta Emili',
-		clientAddress: 'Tokyo',
+		clientName: 'Dra. Julieta Torres',
+		clientAddress: 'Buenos Aires, Argentina',
 		content:
-			'This place is exactly like the picture posted on Chisfis. Great service, we had a great stay!',
+			'Me encanta poder compartir formularios clínicos de manera profesional y recibir reportes automáticos. Una solución muy útil para quienes damos seguimiento continuo.',
 	},
-]
+];
+
 
 const SectionClientSay: FC<SectionClientSayProps> = ({
 	className = '',
 	data = DEMO_DATA,
 }) => {
-	const [index, setIndex] = useState(0)
-	const [direction, setDirection] = useState(0)
+	const [index,setIndex] = useState(0)
+	const [direction,setDirection] = useState(0)
 
 	function changeItemId(newVal: number) {
 		if (newVal > index) {
@@ -82,8 +83,8 @@ const SectionClientSay: FC<SectionClientSayProps> = ({
 	let currentItem = data[index]
 	return (
 		<div className={`nc-SectionClientSay relative ${className} `}>
-			<Heading desc="Let's see what people think of Chisfis" isCenter>
-				Good news from far away
+			<Heading desc="Esto es lo que dicen de nosotros" isCenter>
+				Lo que dicen nuestros clientes
 			</Heading>
 			<div className="relative mx-auto max-w-2xl md:mb-16">
 				<div className="absolute -inset-28 top-0 hidden items-center justify-center lg:flex">
@@ -114,8 +115,8 @@ const SectionClientSay: FC<SectionClientSayProps> = ({
 
 					<MotionConfig
 						transition={{
-							x: { type: 'spring', stiffness: 300, damping: 30 },
-							opacity: { duration: 0.2 },
+							x: {type: 'spring',stiffness: 300,damping: 30},
+							opacity: {duration: 0.2},
 						}}
 					>
 						<div
@@ -126,7 +127,7 @@ const SectionClientSay: FC<SectionClientSayProps> = ({
 								<motion.div
 									key={index}
 									custom={direction}
-									variants={variants(200, 1)}
+									variants={variants(200,1)}
 									initial="enter"
 									animate="center"
 									className="inline-flex flex-col items-center whitespace-normal text-center"
@@ -147,11 +148,10 @@ const SectionClientSay: FC<SectionClientSayProps> = ({
 							</AnimatePresence>
 
 							<div className="mt-10 flex items-center justify-center gap-x-2">
-								{data.map((item, i) => (
+								{data.map((item,i) => (
 									<button
-										className={`h-2 w-2 rounded-full ${
-											i === index ? 'bg-black/70' : 'bg-black/10'
-										}`}
+										className={`h-2 w-2 rounded-full ${i === index ? 'bg-black/70' : 'bg-black/10'
+											}`}
 										onClick={() => changeItemId(i)}
 										key={i}
 									/>

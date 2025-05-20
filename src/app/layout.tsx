@@ -16,9 +16,12 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-	title: 'Therapy',
-	description: 'Therapy - Client',
-	keywords: 'therapy, client',
+	title: 'Escala Terapia',
+	description: 'Escala Terapia es una plataforma de terapia online que conecta a terapeutas con pacientes.',
+	keywords: 'terapia, terapia online, psicología, salud mental',
+	authors: [{name: 'Roger Torres',url: 'https://escalaterapia.com'}],
+	creator: 'Roger Torres',
+	applicationName: 'Escala Terapia',
 }
 
 export default function RootLayout({

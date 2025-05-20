@@ -1,9 +1,9 @@
-import React, { FC } from 'react'
+import React,{FC} from 'react'
 import HIW1img from '@/images/HIW1.png'
 import HIW2img from '@/images/HIW2.png'
 import HIW3img from '@/images/HIW3.png'
 import VectorImg from '@/images/VectorHIW.svg'
-import Image, { StaticImageData } from 'next/image'
+import Image,{StaticImageData} from 'next/image'
 import Heading from '@/shared/Heading'
 
 export interface SectionHowItWorkProps {
@@ -17,26 +17,26 @@ export interface SectionHowItWorkProps {
 	}[]
 }
 
-const DEMO_DATA: SectionHowItWorkProps['data'] = [
+export const DEMO_DATA: SectionHowItWorkProps['data'] = [
 	{
 		id: 1,
 		img: HIW1img,
-		title: 'Book & relax',
-		desc: 'Let each trip be an inspirational journey, each room a peaceful space',
+		title: 'Suscríbete a un plan',
+		desc: 'Elige el plan que se adapte a tu consulta y desbloquea acceso a formularios clínicos profesionales.',
 	},
 	{
 		id: 2,
 		img: HIW2img,
-		title: 'Smart checklist',
-		desc: 'Let each trip be an inspirational journey, each room a peaceful space',
+		title: 'Comparte el formulario con tus pacientes',
+		desc: 'Envía evaluaciones personalizadas a tus pacientes y obtén sus respuestas en tiempo real.',
 	},
 	{
 		id: 3,
 		img: HIW3img,
-		title: 'Save more',
-		desc: 'Let each trip be an inspirational journey, each room a peaceful space',
+		title: 'Visualiza reportes clínicos',
+		desc: 'Accede a informes automáticos con niveles de ansiedad, estadísticas y seguimiento de progreso.',
 	},
-]
+];
 
 const SectionHowItWork: FC<SectionHowItWorkProps> = ({
 	className = '',
@@ -47,8 +47,8 @@ const SectionHowItWork: FC<SectionHowItWorkProps> = ({
 			className={`nc-SectionHowItWork ${className}`}
 			data-nc-id="SectionHowItWork"
 		>
-			<Heading isCenter desc="Keep calm & travel on">
-				How it work
+			<Heading isCenter desc="">
+				Como funciona
 			</Heading>
 			<div className="relative mt-20 grid gap-20 md:grid-cols-3">
 				<Image

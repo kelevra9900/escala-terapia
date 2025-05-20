@@ -1,38 +1,40 @@
-import React, { FC } from 'react'
+import React,{FC} from 'react'
 import ButtonCircle from '@/shared/ButtonCircle'
 import rightImg from '@/images/SVG-subcribe2.png'
 import Badge from '@/shared/Badge'
 import Input from '@/shared/Input'
 import Image from 'next/image'
-import { ArrowRightIcon } from '@heroicons/react/24/solid'
+import {ArrowRightIcon} from '@heroicons/react/24/solid'
 import T from '@/utils/getT'
 
 export interface SectionSubscribe2Props {
 	className?: string
 }
 
-const SectionSubscribe2: FC<SectionSubscribe2Props> = ({ className = '' }) => {
+const SectionSubscribe2: FC<SectionSubscribe2Props> = ({className = ''}) => {
 	return (
 		<div
 			className={`nc-SectionSubscribe2 relative flex flex-col lg:flex-row lg:items-center ${className}`}
 		>
 			<div className="mb-10 flex-shrink-0 lg:mb-0 lg:me-10 lg:w-2/5">
-				<h2 className="text-4xl font-semibold">Join our newsletter 🎉</h2>
+				<h2 className="text-4xl font-semibold">
+					Únete a nuestra comunidad de terapeutas 🧠
+				</h2>
 				<span className="mt-5 block text-neutral-500 dark:text-neutral-400">
-					Read and share new perspectives on just about any topic. Everyone’s
-					welcome.
+					Recibe recursos clínicos, actualizaciones sobre nuevos formularios y consejos
+					para mejorar tu práctica profesional.
 				</span>
 				<ul className="mt-10 space-y-4">
 					<li className="flex items-center gap-x-4">
 						<Badge name="01" />
 						<span className="font-medium text-neutral-700 dark:text-neutral-300">
-							Get more discount
+							Accede a formularios clínicos exclusivos
 						</span>
 					</li>
 					<li className="flex items-center gap-x-4">
 						<Badge color="red" name="02" />
 						<span className="font-medium text-neutral-700 dark:text-neutral-300">
-							Get premium magazines
+							Aprende a interpretar resultados con reportes automáticos
 						</span>
 					</li>
 				</ul>
@@ -40,7 +42,7 @@ const SectionSubscribe2: FC<SectionSubscribe2Props> = ({ className = '' }) => {
 					<Input
 						required
 						aria-required
-						placeholder={T['common']['Enter your email']}
+						placeholder={'Ingresa tu correo electrónico'}
 						type="email"
 						rounded="rounded-full"
 						sizeClass="h-12 px-5 py-3"

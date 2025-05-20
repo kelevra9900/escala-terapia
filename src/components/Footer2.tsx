@@ -1,10 +1,10 @@
 import Logo from '@/shared/Logo'
 
 const navigation: {
-	solutions: { name: string; href: string }[]
-	support: { name: string; href: string }[]
-	company: { name: string; href: string }[]
-	legal: { name: string; href: string }[]
+	solutions: {name: string; href: string}[]
+	support: {name: string; href: string}[]
+	company: {name: string; href: string}[]
+	legal: {name: string; href: string}[]
 	social: {
 		name: string
 		href: string
@@ -12,27 +12,27 @@ const navigation: {
 	}[]
 } = {
 	solutions: [
-		{ name: 'Marketing', href: '#' },
-		{ name: 'Analytics', href: '#' },
-		{ name: 'Automation', href: '#' },
-		{ name: 'Commerce', href: '#' },
+		{name: 'Formularios clínicos',href: '#'},
+		{name: 'Reportes automáticos',href: '#'},
+		{name: 'Seguimiento de pacientes',href: '#'},
+		{name: 'Suscripciones para terapeutas',href: '#'},
 	],
 	support: [
-		{ name: 'Submit ticket', href: '#' },
-		{ name: 'Documentation', href: '#' },
-		{ name: 'Guides', href: '#' },
+		{name: 'Centro de ayuda',href: '#'},
+		{name: 'Guías de uso',href: '#'},
+		{name: 'Contacto',href: '#'},
 	],
 	company: [
-		{ name: 'About', href: '#' },
-		{ name: 'Blog', href: '#' },
-		{ name: 'Jobs', href: '#' },
-		{ name: 'Press', href: '#' },
+		{name: 'Quiénes somos',href: '#'},
+		{name: 'Blog clínico',href: '#'},
+		{name: 'Oportunidades laborales',href: '#'},
+		{name: 'Prensa',href: '#'},
 	],
 	legal: [
-		{ name: 'Terms of service', href: '#' },
-		{ name: 'Privacy policy', href: '#' },
-		{ name: 'License', href: '#' },
-		{ name: 'Insights', href: '#' },
+		{name: 'Términos del servicio',href: '#'},
+		{name: 'Política de privacidad',href: '#'},
+		{name: 'Licencia de uso',href: '#'},
+		{name: 'Aviso legal',href: '#'},
 	],
 	social: [
 		{
@@ -107,8 +107,7 @@ export default function Footer2() {
 					<div className="space-y-8">
 						<Logo className="w-20" />
 						<p className="text-balance text-sm/6 text-gray-600 dark:text-neutral-400">
-							Making the world a better place through constructing elegant
-							hierarchies.
+							Making the world a better place
 						</p>
 						<div className="flex gap-x-6">
 							{navigation.social.map((item) => (
@@ -127,7 +126,7 @@ export default function Footer2() {
 						<div className="md:grid md:grid-cols-2 md:gap-8">
 							<div>
 								<h3 className="text-sm/6 font-semibold text-gray-900 dark:text-neutral-300">
-									Solutions
+									Soluciones
 								</h3>
 								<ul role="list" className="mt-6 space-y-4">
 									{navigation.solutions.map((item) => (
@@ -144,7 +143,7 @@ export default function Footer2() {
 							</div>
 							<div className="mt-10 md:mt-0">
 								<h3 className="text-sm/6 font-semibold text-gray-900 dark:text-neutral-300">
-									Support
+									Soporte
 								</h3>
 								<ul role="list" className="mt-6 space-y-4">
 									{navigation.support.map((item) => (
@@ -163,7 +162,7 @@ export default function Footer2() {
 						<div className="md:grid md:grid-cols-2 md:gap-8">
 							<div>
 								<h3 className="text-sm/6 font-semibold text-gray-900 dark:text-neutral-300">
-									Company
+									Nosotros
 								</h3>
 								<ul role="list" className="mt-6 space-y-4">
 									{navigation.company.map((item) => (
@@ -200,7 +199,7 @@ export default function Footer2() {
 				</div>
 				<div className="mt-16 border-t border-gray-900/10 pt-8 dark:border-gray-700 sm:mt-20 lg:mt-24">
 					<p className="text-sm/6 text-gray-600 dark:text-neutral-400">
-						&copy; 2024 Your Company, Inc. All rights reserved.
+						&copy; 2025 Escala terapia By Roger Torres. All rights reserved.
 					</p>
 				</div>
 			</div>

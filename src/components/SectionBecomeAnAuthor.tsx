@@ -1,9 +1,8 @@
-import React, { FC } from 'react'
+import React,{FC} from 'react'
 import rightImgDemo from '@/images/BecomeAnAuthorImg.png'
 import ButtonPrimary from '@/shared/ButtonPrimary'
 import Logo from '@/shared/Logo'
 import Image from 'next/image'
-import T from '@/utils/getT'
 
 export interface SectionBecomeAnAuthorProps {
 	className?: string
@@ -21,15 +20,15 @@ const SectionBecomeAnAuthor: FC<SectionBecomeAnAuthorProps> = ({
 			<div className="mb-16 flex-shrink-0 lg:mb-0 lg:me-10 lg:w-2/5">
 				<Logo className="w-20" />
 				<h2 className="mt-6 text-3xl font-semibold sm:mt-11 sm:text-4xl">
-					Why did you choose us?
+					¿Por qué terapeutas como tú usan nuestra herramienta?
 				</h2>
 				<span className="mt-6 block text-neutral-500 dark:text-neutral-400">
-					Accompanying us, you have a trip full of experiences. With Chisfis,
-					booking accommodation, resort villas, hotels, private houses,
-					apartments... becomes fast, convenient and easy.
+					Porque simplificamos la evaluación clínica: accede a formularios validados como el BAI,
+					envíalos fácilmente a tus pacientes, y recibe reportes automáticos que te ayudan
+					a tomar decisiones terapéuticas más informadas.
 				</span>
 				<ButtonPrimary className="mt-6 sm:mt-11">
-					{T['common']['Become an author']}
+					Comenzar ahora
 				</ButtonPrimary>
 			</div>
 			<div className="flex-grow">

@@ -1,10 +1,10 @@
-import { CheckIcon } from '@heroicons/react/24/solid'
-import React, { FC } from 'react'
+import {CheckIcon} from '@heroicons/react/24/solid'
+import React,{FC} from 'react'
 import ButtonPrimary from '@/shared/ButtonPrimary'
 import ButtonSecondary from '@/shared/ButtonSecondary'
 import T from '@/utils/getT'
 
-export interface PageSubcriptionProps {}
+export interface PageSubcriptionProps { }
 
 export interface PricingItem {
 	isPopular: boolean
@@ -15,53 +15,59 @@ export interface PricingItem {
 	features: string[]
 }
 
-const pricings: PricingItem[] = [
+export const pricings: PricingItem[] = [
 	{
 		isPopular: false,
 		name: 'Starter',
-		pricing: '$5',
-		per: '/mo',
-		features: ['Automated Reporting', 'Faster Processing', 'Customizations'],
-		desc: ` Literally you probably haven't heard of them jean shorts.`,
+		pricing: '$9',
+		per: '/mes',
+		features: [
+			'Acceso a 2 formularios clínicos',
+			'Hasta 10 respuestas por mes',
+			'Visualización básica de resultados',
+			'Soporte por correo electrónico',
+		],
+		desc: 'Ideal para terapeutas que inician y quieren evaluar a sus primeros pacientes.',
 	},
 	{
 		isPopular: true,
-		name: 'Basic',
-		pricing: '$15',
-		per: '/mo',
+		name: 'Profesional',
+		pricing: '$19',
+		per: '/mes',
 		features: [
-			'Everything in Starter',
-			'100 Builds',
-			'Progress Reports',
-			'Premium Support',
+			'Acceso a todos los formularios clínicos',
+			'Respuestas ilimitadas de pacientes',
+			'Generación automática de reportes',
+			'Soporte prioritario por email',
 		],
-		desc: ` Literally you probably haven't heard of them jean shorts.`,
+		desc: 'Perfecto para terapeutas en práctica activa que evalúan a múltiples pacientes al mes.',
 	},
 	{
 		isPopular: false,
-		name: 'Plus',
-		pricing: '$25',
-		per: '/mo',
+		name: 'Avanzado',
+		pricing: '$39',
+		per: '/mes',
 		features: [
-			'Everything in Basic',
-			'Unlimited Builds',
-			'Advanced Analytics',
-			'Company Evaluations',
+			'Todo lo incluido en Profesional',
+			'Exportación de datos en PDF y Excel',
+			'Análisis estadístico de resultados',
+			'Asignación de formularios automática',
+			'Atención personalizada por WhatsApp',
 		],
-		desc: ` Literally you probably haven't heard of them jean shorts.`,
+		desc: 'Diseñado para clínicas o terapeutas con alto volumen de pacientes y seguimiento detallado.',
 	},
-]
+];
+
 
 const PageSubcription: FC<PageSubcriptionProps> = () => {
-	const renderPricingItem = (pricing: PricingItem, index: number) => {
+	const renderPricingItem = (pricing: PricingItem,index: number) => {
 		return (
 			<div
 				key={index}
-				className={`relative flex h-full flex-col overflow-hidden rounded-3xl border-2 px-6 py-8 ${
-					pricing.isPopular
-						? 'border-primary-500'
-						: 'border-neutral-100 dark:border-neutral-700'
-				}`}
+				className={`relative flex h-full flex-col overflow-hidden rounded-3xl border-2 px-6 py-8 ${pricing.isPopular
+					? 'border-primary-500'
+					: 'border-neutral-100 dark:border-neutral-700'
+					}`}
 			>
 				{pricing.isPopular && (
 					<span className="absolute end-3 top-3 z-10 rounded-full bg-primary-500 px-3 py-1 text-xs tracking-widest text-white">
@@ -80,7 +86,7 @@ const PageSubcription: FC<PageSubcriptionProps> = () => {
 					</h2>
 				</div>
 				<nav className="mb-8 space-y-4">
-					{pricing.features.map((item, index) => (
+					{pricing.features.map((item,index) => (
 						<li className="flex items-center" key={index}>
 							<span className="me-4 inline-flex flex-shrink-0 text-primary-600">
 								<CheckIcon className="h-5 w-5" aria-hidden="true" />

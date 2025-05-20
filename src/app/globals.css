@@ -1,3 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* globals.css */
+.bg-surface {
+	background-color: rgb(var(--c-neutral-50));
+}
+
+.text-base {
+	color: rgb(var(--c-neutral-800));
+}
+
+.text-muted {
+	color: rgb(var(--c-neutral-500));
+}
+
+.dark .bg-surface {
+	background-color: rgb(var(--c-neutral-900));
+}
+
+.dark .text-base {
+	color: rgb(var(--c-neutral-100));
+}
+
+.dark .text-muted {
+	color: rgb(var(--c-neutral-400));
+}

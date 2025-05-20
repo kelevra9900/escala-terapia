@@ -48,7 +48,7 @@ export default function AvatarDropdown({className = ''}: Props) {
 											<Avatar sizeClass="w-12 h-12" />
 
 											<div className="flex-grow">
-												<h4 className="font-semibold">Eden Smith</h4>
+												<h4 className="font-semibold">Roger Torres</h4>
 												<p className="mt-0.5 text-xs">Los Angeles, CA</p>
 											</div>
 										</div>
@@ -66,14 +66,14 @@ export default function AvatarDropdown({className = ''}: Props) {
 											</div>
 											<div className="ms-4">
 												<p className="text-sm font-medium">
-													{T['Header']['AvatarDropDown']['My Account']}
+													Mi cuenta
 												</p>
 											</div>
 										</Link>
 
 										{/* ------------------ 2 --------------------- */}
 										<Link
-											href={'/author'}
+											href={'#'}
 											className="-m-3 flex items-center rounded-lg p-2 hover:bg-neutral-100 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50 dark:hover:bg-neutral-700"
 											onClick={() => close()}
 										>

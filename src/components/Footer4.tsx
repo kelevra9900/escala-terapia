@@ -1,8 +1,8 @@
 const navigation: {
-	solutions: { name: string; href: string }[]
-	support: { name: string; href: string }[]
-	company: { name: string; href: string }[]
-	legal: { name: string; href: string }[]
+	solutions: {name: string; href: string}[]
+	support: {name: string; href: string}[]
+	company: {name: string; href: string}[]
+	legal: {name: string; href: string}[]
 	social: {
 		name: string
 		href: string
@@ -10,27 +10,27 @@ const navigation: {
 	}[]
 } = {
 	solutions: [
-		{ name: 'Marketing', href: '#' },
-		{ name: 'Analytics', href: '#' },
-		{ name: 'Automation', href: '#' },
-		{ name: 'Commerce', href: '#' },
-		{ name: 'Insights', href: '#' },
+		{name: 'Marketing',href: '#'},
+		{name: 'Analytics',href: '#'},
+		{name: 'Automation',href: '#'},
+		{name: 'Commerce',href: '#'},
+		{name: 'Insights',href: '#'},
 	],
 	support: [
-		{ name: 'Submit ticket', href: '#' },
-		{ name: 'Documentation', href: '#' },
-		{ name: 'Guides', href: '#' },
+		{name: 'Submit ticket',href: '#'},
+		{name: 'Documentation',href: '#'},
+		{name: 'Guides',href: '#'},
 	],
 	company: [
-		{ name: 'About', href: '#' },
-		{ name: 'Blog', href: '#' },
-		{ name: 'Jobs', href: '#' },
-		{ name: 'Press', href: '#' },
+		{name: 'About',href: '#'},
+		{name: 'Blog',href: '#'},
+		{name: 'Jobs',href: '#'},
+		{name: 'Press',href: '#'},
 	],
 	legal: [
-		{ name: 'Terms of service', href: '#' },
-		{ name: 'Privacy policy', href: '#' },
-		{ name: 'License', href: '#' },
+		{name: 'Terms of service',href: '#'},
+		{name: 'Privacy policy',href: '#'},
+		{name: 'License',href: '#'},
 	],
 	social: [
 		{
@@ -106,7 +106,7 @@ export default function Footer4() {
 						<div className="md:grid md:grid-cols-2 md:gap-8">
 							<div>
 								<h3 className="text-sm/6 font-semibold text-gray-900 dark:text-neutral-300">
-									Solutions
+									Soluciones
 								</h3>
 								<ul role="list" className="mt-6 space-y-4">
 									{navigation.solutions.map((item) => (
@@ -123,7 +123,7 @@ export default function Footer4() {
 							</div>
 							<div className="mt-10 md:mt-0">
 								<h3 className="text-sm/6 font-semibold text-gray-900 dark:text-neutral-300">
-									Support
+									Soporte
 								</h3>
 								<ul role="list" className="mt-6 space-y-4">
 									{navigation.support.map((item) => (

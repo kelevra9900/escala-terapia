@@ -1,14 +1,13 @@
-import React, { FC } from 'react'
+import React,{FC} from 'react'
 import imagePng from '@/images/hero-right-3.png'
 import Image from 'next/image'
-import HeroRealEstateSearchForm from '../(client-components)/(HeroSearchForm)/(real-estate-search-form)/HeroRealEstateSearchForm'
 
 export interface SectionHero2Props {
 	className?: string
 	children?: React.ReactNode
 }
 
-const SectionHero2: FC<SectionHero2Props> = ({ className = '', children }) => {
+const SectionHero2: FC<SectionHero2Props> = ({className = '',children}) => {
 	return (
 		<div className={`nc-SectionHero2 relative ${className}`}>
 			<div className="absolute inset-y-0 end-0 w-5/6 flex-grow xl:w-3/4">
@@ -22,13 +21,10 @@ const SectionHero2: FC<SectionHero2Props> = ({ className = '', children }) => {
 							children
 						) : (
 							<h2 className="text-4xl font-semibold !leading-[110%] md:text-5xl xl:text-7xl">
-								Find Your Best <br /> Smart Real Estate
+								Evalúa mejor. <br /> Conecta más. <br /> Mejora tus terapias.
 							</h2>
 						)}
 					</div>
-				</div>
-				<div className="hidden w-full lg:mt-20 lg:block">
-					<HeroRealEstateSearchForm />
 				</div>
 			</div>
 		</div>

@@ -6,9 +6,9 @@ import {
 	PopoverPanel,
 	Transition,
 } from '@headlessui/react'
-import { FC, Fragment } from 'react'
+import {FC,Fragment} from 'react'
 import Avatar from '@/shared/Avatar'
-import { BellIcon } from '@heroicons/react/24/outline'
+import {BellIcon} from '@heroicons/react/24/outline'
 import avatar4 from '@/images/avatars/Image-4.png'
 import avatar5 from '@/images/avatars/Image-5.png'
 import avatar6 from '@/images/avatars/Image-6.png'
@@ -42,16 +42,15 @@ interface Props {
 	className?: string
 }
 
-const NotifyDropdown: FC<Props> = ({ className = '' }) => {
+const NotifyDropdown: FC<Props> = ({className = ''}) => {
 	return (
 		<>
 			<Popover className={`relative flex ${className}`}>
-				{({ open }) => (
+				{({open}) => (
 					<>
 						<PopoverButton
-							className={` ${
-								open ? '' : 'text-opacity-90'
-							} group relative inline-flex h-10 w-10 items-center justify-center self-center rounded-full text-base font-medium hover:bg-gray-100 hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 dark:hover:bg-neutral-800 sm:h-12 sm:w-12`}
+							className={` ${open ? '' : 'text-opacity-90'
+								} group relative inline-flex h-10 w-10 items-center justify-center self-center rounded-full text-base font-medium hover:bg-gray-100 hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 dark:hover:bg-neutral-800 sm:h-12 sm:w-12`}
 						>
 							<span className="absolute end-2 top-2 h-2 w-2 rounded-full bg-blue-500"></span>
 							<BellIcon className="h-6 w-6" />
@@ -69,9 +68,9 @@ const NotifyDropdown: FC<Props> = ({ className = '' }) => {
 								<div className="overflow-hidden rounded-2xl shadow-lg ring-1 ring-black ring-opacity-5">
 									<div className="relative grid gap-8 bg-white p-7 dark:bg-neutral-800">
 										<h3 className="text-xl font-semibold">
-											{T['Header']['Notifications']['Notifications']}
+											Notificaciones
 										</h3>
-										{notifications.map((item, index) => (
+										{notifications.map((item,index) => (
 											<a
 												key={index}
 												href={item.href}

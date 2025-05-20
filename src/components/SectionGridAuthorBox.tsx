@@ -1,9 +1,9 @@
 import CardAuthorBox from '@/components/CardAuthorBox'
 import CardAuthorBox2 from '@/components/CardAuthorBox2'
 import Heading from '@/shared/Heading'
-import { DEMO_AUTHORS } from '@/data/authors'
-import { AuthorType } from '@/data/types'
-import React, { FC } from 'react'
+import {DEMO_AUTHORS} from '@/data/authors'
+import {AuthorType} from '@/data/types'
+import React,{FC} from 'react'
 import ButtonPrimary from '@/shared/ButtonPrimary'
 import ButtonSecondary from '@/shared/ButtonSecondary'
 import T from '@/utils/getT'
@@ -15,7 +15,7 @@ export interface SectionGridAuthorBoxProps {
 	gridClassName?: string
 }
 
-const DEMO_DATA = DEMO_AUTHORS.filter((_, i) => i < 10)
+const DEMO_DATA = DEMO_AUTHORS.filter((_,i) => i < 10)
 
 const SectionGridAuthorBox: FC<SectionGridAuthorBoxProps> = ({
 	className = '',
@@ -25,11 +25,11 @@ const SectionGridAuthorBox: FC<SectionGridAuthorBoxProps> = ({
 }) => {
 	return (
 		<div className={`nc-SectionGridAuthorBox relative ${className}`}>
-			<Heading desc="Rating based on customer reviews" isCenter>
-				Top 10 author of the month
+			<Heading desc="Rating basado en reseñas" isCenter>
+				Top 10 terapeutas del mes
 			</Heading>
 			<div className={`grid gap-6 md:gap-8 ${gridClassName}`}>
-				{authors.map((author, index) =>
+				{authors.map((author,index) =>
 					boxCard === 'box2' ? (
 						<CardAuthorBox2 key={author.id} author={author} />
 					) : (
@@ -42,8 +42,8 @@ const SectionGridAuthorBox: FC<SectionGridAuthorBoxProps> = ({
 				)}
 			</div>
 			<div className="mt-16 flex flex-col justify-center gap-y-3 sm:flex-row sm:gap-x-5 sm:gap-y-0">
-				<ButtonSecondary loading>{T['common']['Show me more']}</ButtonSecondary>
-				<ButtonPrimary>{T['common']['Become a host']}</ButtonPrimary>
+				<ButtonSecondary loading>Ver más</ButtonSecondary>
+				<ButtonPrimary>Registrate como terapeuta</ButtonPrimary>
 			</div>
 		</div>
 	)

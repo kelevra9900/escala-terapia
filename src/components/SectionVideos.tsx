@@ -4,7 +4,7 @@ import Heading from '@/shared/Heading'
 import NcPlayIcon from '@/shared/NcPlayIcon'
 import NcPlayIcon2 from '@/shared/NcPlayIcon2'
 import Image from 'next/image'
-import React, { FC, useState } from 'react'
+import React,{FC,useState} from 'react'
 
 export interface VideoType {
 	id: string
@@ -54,8 +54,8 @@ const SectionVideos: FC<SectionVideosProps> = ({
 	videos = VIDEOS_DEMO,
 	className = '',
 }) => {
-	const [isPlay, setIsPlay] = useState(false)
-	const [currentVideo, setCurrentVideo] = useState(0)
+	const [isPlay,setIsPlay] = useState(false)
+	const [currentVideo,setCurrentVideo] = useState(0)
 
 	const renderMainVideo = () => {
 		const video: VideoType = videos[currentVideo]
@@ -94,7 +94,7 @@ const SectionVideos: FC<SectionVideosProps> = ({
 		)
 	}
 
-	const renderSubVideo = (video: VideoType, index: number) => {
+	const renderSubVideo = (video: VideoType,index: number) => {
 		if (index === currentVideo) return null
 		return (
 			<div
@@ -123,8 +123,8 @@ const SectionVideos: FC<SectionVideosProps> = ({
 
 	return (
 		<div className={`nc-SectionVideos ${className}`}>
-			<Heading desc="Check out our hottest videos. View more and share more new perspectives on just about any topic. Everyone’s welcome.">
-				🎬 The Videos
+			<Heading desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In congue dolor quis convallis luctus. Maecenas ornare nulla turpis, sed tristique magna finibus in">
+				🎬 Videos
 			</Heading>
 
 			<div className="relative flex flex-col sm:py-4 sm:pe-4 md:py-6 md:pe-6 lg:flex-row xl:py-14 xl:pe-14">
